@@ -12,6 +12,7 @@
 	top: 100%;
         bottom: 0;
 	left: -320px;
+	right: 0; //на всю ширину меню будет выдвигатся справа налево
 	left: 100% //на всю ширину
 	z-index: 999;
 	background: $light-blue;
