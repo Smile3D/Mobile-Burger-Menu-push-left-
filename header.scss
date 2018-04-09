@@ -12,10 +12,12 @@
 	top: 100%;
         bottom: 0;
 	left: -320px;
+	left: 100% //на всю ширину
 	z-index: 999;
 	background: $light-blue;
 	overflow: hidden;
 	width: 320px;
+	width: 0; // на всю ширину
 
 	@include media ('>=phone') {
 		left: 0;
@@ -24,6 +26,7 @@
 
 	.nav-active & {
 		left: 0;
+		width: 100%; //на всю ширину
 
 		@include media ('>=phone') {
 			width: 320px;
