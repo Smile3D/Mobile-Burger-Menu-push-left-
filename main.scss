@@ -1,1 +1,101 @@
 
+.resize-active {
+	.nav-drop {
+		transition: none !important;
+	}
+}
+
+.nav-drop {
+	@include animate(width left);
+
+	position: absolute;
+	top: 100%;
+  bottom: 0;
+	left: -320px;
+	z-index: 999;
+	background: $light-blue;
+	overflow: hidden;
+	width: 320px;
+
+	@include media ('>=phone') {
+		left: 0;
+		width: 80px;
+	}
+
+	.nav-active & {
+		left: 0;
+
+		@include media ('>=phone') {
+			width: 320px;
+		}
+	}
+
+	ul {
+		@extend %listreset;
+
+		padding-top: 16px;
+
+		li {
+			&.active a {
+				color: $light-blue;
+			}
+		}
+
+		a {
+			&:hover {
+				background: $dark-blue;
+			}
+		}
+	}
+}
+
+.nav-opener {
+	display: block;
+	width: 44px;
+	height: 35px;
+	float: left;
+	position: relative;
+	margin: 3px 0 0 3px;
+
+	&:before,
+	&:after,
+	span {
+		background: $white;
+		position: absolute;
+		top: 23px;
+		left: 0;
+		right: 0;
+		height: 3px;
+		margin-top:-2px;
+		transition: all .2s linear;
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		top: 11px;
+	}
+
+	&:after {
+		top: 35px;
+	}
+
+	.nav-active & {
+
+		span {
+			opacity: 0;
+		}
+
+		&:before,
+		&:after {
+			transform: rotate(45deg);
+			top: 50%;
+			left: 5px;
+			right: 5px;
+		}
+
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+}
