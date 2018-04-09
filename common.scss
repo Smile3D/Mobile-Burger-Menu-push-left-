@@ -1,15 +1,15 @@
 body {
   &.nav-active {
     @include media ('>=tablet') {
-			.push-holder {
-				margin-left: 80px;
-			}
-		}
+	.push-holder {
+		margin-left: 80px;
+	}
+}
 
-		@include media ('>=desktop') {
-			.push-holder {
-				margin-left: 320px;
-			}
+	@include media ('>=desktop') {
+		.push-holder {
+			margin-left: 320px;
 		}
-  }
+	}
+    }
 }
